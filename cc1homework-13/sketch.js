@@ -8,17 +8,17 @@ var mousey = -20;
 var speedX = 3;
 var speedY= 7;
 
-var bounceX = [i];
-var bounceY = [i];
-var diameterValues = [i];
-var speedForX = [i];
-var speedForY = [i];
+var bounceX = [];
+var bounceY = [];
+var diameterValues = [];
+var speedForX = [];
+var speedForY = [];
 
 function setup()
 {
   createCanvas(400,400);
-  var x2 = 330;
-  var y2 = 330;
+  var x2 = 30;
+  var y2 = 30;
   var diameter2 = 70;
   var speedX2 = 4;
   var speedY2= 6;
@@ -71,16 +71,11 @@ function character(){
   ellipse(mousex, mousey, 40, 40);
 }
 
-for(var i = 0; i < bounceX[i].length; i++)
-{
-  bounceCircle(bounceX[i], bounceY[i], diameterValues[i]);
-}
-
 function bounceCircle(){
   fill(100,200,57);
-  circle(bounceX[i],bounceY[i],diameterValues[i]);
-  for(var i = 0; i < bounceX[i].length; i++)
+  for(var i = 0; i < bounceX.length; i++)
   {
+    circle(bounceX[i],bounceY[i],diameterValues[i]);
     if (bounceX[i] >= width-diameterValues[i]/2 || bounceX[i] <= diameterValues[i]/2)
     {
       speedForX[i] *= -1;
